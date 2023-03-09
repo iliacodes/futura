@@ -81,7 +81,7 @@ contract FuturaGame {
                 })
             );
 
-            // generateRandomAttributes(i);
+            generateRandomAttributes(i);
 
             CharacterAttributes memory c = defaultCharacters[i];
                 console.log("Done initializing Character %s:", c.characterIndex);
@@ -116,7 +116,7 @@ contract FuturaGame {
 
     function generateRandomAttributes(
         uint seed
-    ) internal view returns (CharacterAttributes memory) {
+    ) internal returns (CharacterAttributes memory) {
         CharacterAttributes memory attributes = defaultCharacters[
             seed % defaultCharacters.length
         ];
