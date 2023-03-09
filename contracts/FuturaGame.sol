@@ -45,9 +45,7 @@ contract FuturaGame {
     // Data passed in to the contract when it's first created initializing the characters.
     constructor(
         string[] memory characterNames,
-        string[] memory characterImageURIs,
-        uint[] memory characterHp,
-        uint[] memory characterAttackDmg
+        string[] memory characterImageURIs
     ) {
         // Loop through all the characters, and save their values in our contract so we can use them later when we mint our NFTs.
         for (uint i = 0; i < characterNames.length; i += 1) {
@@ -56,9 +54,9 @@ contract FuturaGame {
                     characterIndex: i,
                     name: characterNames[i],
                     imageURI: characterImageURIs[i],
-                    hp: characterHp[i],
-                    maxHp: characterHp[i],
-                    attackDamage: characterAttackDmg[i],
+                    hp: 0,
+                    maxHp: 0,
+                    attackDamage: 0,
                     apparel: "",
                     expression: "",
                     eyes: "",
@@ -83,13 +81,36 @@ contract FuturaGame {
                 })
             );
 
+            // generateRandomAttributes(i);
+
             CharacterAttributes memory c = defaultCharacters[i];
-            console.log(
-                "Done initializing %s w/ HP %s, img %s",
-                c.name,
-                c.hp,
-                c.imageURI
-            );
+                console.log("Done initializing Character %s:", c.characterIndex);
+                console.log("Name: %s", c.name);
+                console.log("Image URI: %s", c.imageURI);
+                console.log("HP: %s", c.hp);
+                console.log("Max HP: %s", c.maxHp);
+                console.log("Attack Damage: %s", c.attackDamage);
+                console.log("Apparel: %s", c.apparel);
+                console.log("Expression: %s", c.expression);
+                console.log("Eyes: %s", c.eyes);
+                console.log("Gender: %s", c.gender);
+                console.log("Hair: %s", c.hair);
+                console.log("Helmet: %s", c.helmet);
+                console.log("Mouth: %s", c.mouth);
+                console.log("Nose: %s", c.nose);
+                console.log("Skin: %s", c.skin);
+                console.log("Attractiveness: %s", c.attractiveness);
+                console.log("Cool: %s", c.cool);
+                console.log("Strength: %s", c.strength);
+                console.log("Intelligence: %s", c.intelligence);
+                console.log("Class: %s", c.class);
+                console.log("Allocation: %s", c.allocation);
+                console.log("Vehicle: %s", c.vehicle);
+                console.log("Location: %s", c.location);
+                console.log("Pet: %s", c.pet);
+                console.log("Weapon: %s", c.weapon);
+                console.log("Race: %s", c.race);
+                console.log("Ability: %s", c.ability);
         }
     }
 
