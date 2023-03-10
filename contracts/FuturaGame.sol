@@ -1,4 +1,5 @@
 // SPDX-License-Identifier: MIT
+import "./libraries/Base64.sol";
 pragma solidity ^0.8.17;
 
 
